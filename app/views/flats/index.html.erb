@@ -1,0 +1,12 @@
+<%= link_to "Simple Airbnb", flats_path %>
+
+<h1>All Taffanie's Flats</h1>
+
+<% @flats.each do |flat| %>
+  <h3><%= flat.name %><br></h3>
+  <p><%= flat.description %></p>
+  <p><%= flat.number_of_guests %></p><br>
+  <p><%= flat.price_per_night %></p><br>
+  <br>
+<% end %>
+
