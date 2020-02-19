@@ -1,12 +1,16 @@
 <%= link_to "Simple Airbnb", flats_path %>
+<%= link_to "Add Flat", new_flat_path %>
 
 <h1>All Taffanie's Flats</h1>
 
 <% @flats.each do |flat| %>
-  <h3><%= flat.name %><br></h3>
-  <p><%= flat.description %></p>
+  <h4><%= flat.name %><br></h4>
+  <p><%= flat.address %></p>
   <p><%= flat.number_of_guests %></p><br>
   <p><%= flat.price_per_night %></p><br>
+  <%= link_to "More info", flat_path(flat) %><br>
+  <%= link_to "Edit", edit_flat_path(flat) %><br>
+  <%= link_to "Remove", flat_path(flat), method: :delete, data: {confirm: "Are you sure?"} %>
   <br>
 <% end %>
 
